@@ -83,6 +83,10 @@ ${COMPILER}/main.axf: ${COMPILER}/startup_${COMPILER}.o
 ${COMPILER}/main.axf: ${COMPILER}/GPIO.o
 ${COMPILER}/main.axf: ${COMPILER}/PLL.o
 ${COMPILER}/main.axf: ${COMPILER}/UART.o
+${COMPILER}/main.axf: ${COMPILER}/I2C3.o
+${COMPILER}/main.axf: ${COMPILER}/OLED.o
+${COMPILER}/main.axf: ${COMPILER}/ADC.o
+${COMPILER}/main.axf: ${COMPILER}/SSD1306_OLED.o
 ${COMPILER}/main.axf: main.ld
 SCATTERgcc_main=main.ld
 ENTRY_main=ResetISR

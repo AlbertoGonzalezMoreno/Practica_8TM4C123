@@ -49,6 +49,10 @@
 #include "GPIO.h"
 #include "PLL.h"
 #include "UART.h"
+#include "I2C3.h"
+#include "OLED.h"
+#include "ADC.h"
+#include "SSD1306_OLED.h"
 
 
 #endif /* INCLUDE_H_ */

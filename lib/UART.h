@@ -8,4 +8,6 @@ extern void printChar(char c);
 extern void printString(char* string, int Size);
 extern int readString(char delimitador, char *string);
 extern void invertString(char delimitador, char *string, int Size);
+extern void inverse(char *string,char *strong);
+extern void float2str(float c, char *valor);
 #endif /* UART_UART_H_ */

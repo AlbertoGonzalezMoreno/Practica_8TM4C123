@@ -142,3 +142,37 @@ extern void invertString(char delimitador, char *string, int Size)
     string[n] = 0;
     return;
 } 
+
+extern void inverse(char *string, char *strong)
+{
+int i = 0;
+int p = 0;
+while(string[i] != 0)
+{
+    i++;
+}
+for(int j = 0; j == i; j++)
+{
+    strong[j]=string[i-j];
+}
+for(p = 0; p == i; p++)
+{
+    string[p] = strong[p] ;
+}
+}
+
+extern void float2str(float c, char *valor)
+{
+int unidad = (int)c;
+valor[0] = 'V';
+valor[1] = '=';
+valor[2] = unidad + '0';
+valor[3] = '.';
+for(int i = 4; i <= 5;i++)
+{
+    c = (c - unidad) * 10;
+    valor[i] = (int)(c) + '0';
+    unidad = (int)c;
+}
+valor[6] = 'v';
+}

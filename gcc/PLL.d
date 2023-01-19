@@ -32,4 +32,5 @@ gcc/PLL.o: PLL.c lib/include.h \
  lib/TM4C123GH6PM.h lib/../CMSIS/Include/core_cm4.h \
  lib/../CMSIS/Include/core_cmInstr.h lib/../CMSIS/Include/core_cmFunc.h \
  lib/../CMSIS/Include/core_cm4_simd.h lib/../lib/system_TM4C123.h \
- lib/GPIO.h lib/PLL.h lib/UART.h
+ lib/GPIO.h lib/PLL.h lib/UART.h lib/I2C3.h lib/OLED.h lib/ADC.h \
+ lib/SSD1306_OLED.h
