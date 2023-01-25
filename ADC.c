@@ -45,7 +45,7 @@ extern void Configurar_ADC0(void)
             ADC0->ACTSS  =   (0<<3) | (0<<2) | (0<<1) | (0<<0); 
     //Pag 1091 Este registro (ADCEMUX) selecciona el evento que activa la conversión (trigger)
             // Para el módulo 0 
-            ADC0->EMUX  = (0x0000);
+            ADC0->EMUX  = (0x4<<12);
     //Pag 1129 Este registro (ADCSSMUX2) define las entradas analógicas con el canal y secuenciador seleccionado
             // Para el módulo 0
             ADC0->SSMUX3 = (1<<3) | (0<<2) | (1<<1) | (0<<0); // Lectura 1 Canal 10 

@@ -9,6 +9,7 @@ int main(void)
     I2C3_Init();
     Configurar_PLL(_20MHZ);
     SSD1306_Begin();
+    Configurar_GPIO();
     SSD1306_Display();
     Configurar_ADC0();
     Delay_ms(4000);
