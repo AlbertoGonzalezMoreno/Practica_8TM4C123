@@ -36,8 +36,3 @@ extern void Delay(void)
 		time--;
   }
 }
-
-extern void GPIOD_INT_ISR(void)
-{
-    GPIOD->ICR |=(1<<0)|(1<<1);
-}

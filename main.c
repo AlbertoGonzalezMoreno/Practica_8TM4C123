@@ -14,6 +14,7 @@ int main(void)
     Configurar_ADC0();
     Delay_ms(4000);
     dibujar_ejes();
+     uint16_t Result_ant = 0;
      uint16_t Result[1];
      char voltaje[7];
      float valor;
@@ -21,9 +22,12 @@ int main(void)
     uint8_t y1 = y_min;
     uint8_t x2 = x_min;
     uint8_t y2 = y_min;
+    Result[0] = 0;
      while (1){
-    Lectura_ADC(Result);
-    valor=(float)(((Result[0]))*3.3)/4096;
+   //Lectura_ADC(Result);
+   ADC0->PSSI = 0x00000008;             // Activa sec 3 
+   while((ADC0->RIS&0x08)==0){
+             valor=(float)(((Result[0]))*3.3)/4096;
     float2str(valor,voltaje);
         //////////////////////////////////////// actualizar valores
          x1 = x2;
@@ -40,6 +44,9 @@ int main(void)
           SSD1306_DrawText(87, 2, voltaje);
          //////////////////////////////////////// actualizar pantalla
          SSD1306_Display();
+   };        // Espera al convertidor
+   Result[0] = ADC0->SSFIFO3&0xFFF;     // Leer  el resultado del canal 10
+   ADC0->ISC = 0x0008;                  // Conversion finalizada
         }
 }
 
